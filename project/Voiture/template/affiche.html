@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% extends "football/main.html" %}
+{% block title %}
+Voiture
+{% endblock %}
+{% block content %}
+<h2> Vous avez ajouté la marque suivante : {{marque}} | {{marque.id}} </h2>
+<h2> Liste des voiture dans la marque {{marque}} : </h2>
+{% for j in joueur %}
+<ul class="ul-list">
+    {{j.nom_modele}} né le {{j.date_creation_modele}} , origine de {{j.pays_}} il a gagnée {{j.nombre_LDC}} ligue des champions.<br><br>
+    Détail sur {{j.nom_modele}} :
+    {{j.description}}
+     <a href="/Voiture/delete2/{{j.id}}"><button>Effacer</button></a> <a href="/Voiture/update2/{{j.id}}"><button>Update</button></a></li>
+</ul>
+{% endfor %}
+{% endblock %}
+
+</body>
+</html>
